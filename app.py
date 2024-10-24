@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # MongoDB connection
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient('mongodb+srv://icmrsmartphone:sCG7MyUk9DcZ5sZY@cluster1.aq6ku.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1')
 db = client['flowchart_database']
 users_collection = db['users']
 collection = db['entries']
