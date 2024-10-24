@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowchart</title>
+    <link rel="stylesheet" href="static/css/flowchart_page.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="level-1 rectangle" id="total-subject">Total Subject Approach</h1>
+        <ol class="level-2-wrapper">
+            <li>
+                <h2 class="level-2 rectangle" id="screening-eligibility">Screening for Eligibility</h2>
+                <ol class="level-3-wrapper">
+                    <li>
+                        <h3 class="level-3 rectangle" id="eligible-enrollment">Eligible for Enrollment</h3>
+                        <ol class="level-4-wrapper">
+                            <li>
+                                <h4 class="level-4 rectangle" id="consent-enrolled">Consent and Enrolled</h4>
+                                <ol class="level-5-wrapper">
+                                    <li>
+                                        <h5 class="level-5 rectangle" id="images">Images</h5>
+                                        <ol class="level-6-wrapper">
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="forehead">Forehead</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="sternum">Sternum</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="abdomen">Abdomen</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="hips-thighs">Hips/Thighs</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="legs">Legs</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="palm">Palm</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="soles">Soles</h5>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <h5 class="level-5 rectangle" id="clips-videos">Clips/Videos</h5>
+                                        <ol class="level-6-wrapper">
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="clip-forehead">Forehead</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="clip-sternum">Sternum</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="clip-abdomen">Abdomen</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="clip-hips-thighs">Hips/Thighs</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="clip-legs">Legs</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="clip-palm">Palm</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="level-6 rectangle" id="clip-soles">Soles</h5>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <h4 id="consent-refused" class="level-4 rectangle">Consent Refused</h4>
+                                <h5 class="level-5 rectangle" id="total-consent-refused">Total Consent Refused</h5>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h3 id="excluded-title" class="level-3 rectangle excluded-section">Excluded</h3>
+                        <h4 id="exclusion-reason-title" class="level-4 rectangle excluded-reason">Reason for Exclusion
+                        </h4>
+                        <div class="reason-container">
+                            <div class="level-5 reason rectangle" id="reason-1">Reason 1</div>
+                            <div class="level-5 reason rectangle" id="reason-2">Reason 2</div>
+                        </div>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <br><br>
+    <br><br>
+
+
+    <h1>New Entry Page</h1>
+    <p>You are logged in as {{ session['username'] }}</p>
+
+
+    <!-- Input fields for each box -->
+    <div class="input-container">
+        <h2>Edit Flowchart Content</h2><br><br>
+        <form id="flowchart-form">
+            <div class="form-group">
+                <label for="input-date">Entry Date:</label>
+                <input type="date" id="input-date" name="entry_date" required><br>
+            </div>
+            <div class="form-group">
+                <label for="input-total-subject">Total Subject Approach:</label>
+                <input type="text" id="input-total-subject" name="total_subject" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-screening-eligibility">Screening for Eligibility:</label>
+                <input type="text" id="input-screening-eligibility" name="screening_eligibility"
+                    placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-eligible-enrollment">Eligible for Enrollment:</label>
+                <input type="text" id="input-eligible-enrollment" name="eligible_enrollment"
+                    placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-consent-enrolled">Consent and Enrolled:</label>
+                <input type="text" id="input-consent-enrolled" name="consent_enrolled"
+                    placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-images">Images:</label>
+                <input type="text" id="input-images" name="images" placeholder="Enter new content"><br>
+            </div>
+
+            <!-- Added input fields for all remaining boxes -->
+            <div class="form-group">
+                <label for="input-forehead">Forehead:</label>
+                <input type="text" id="input-forehead" name="forehead" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-sternum">Sternum:</label>
+                <input type="text" id="input-sternum" name="sternum" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-abdomen">Abdomen:</label>
+                <input type="text" id="input-abdomen" name="abdomen" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-hips-thighs">Hips/Thighs:</label>
+                <input type="text" id="input-hips-thighs" name="hips_thighs" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-legs">Legs:</label>
+                <input type="text" id="input-legs" name="legs" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-palm">Palm:</label>
+                <input type="text" id="input-palm" name="palm" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-soles">Soles:</label>
+                <input type="text" id="input-soles" name="soles" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-clips-videos">Clips/Videos:</label>
+                <input type="text" id="input-clips-videos" name="clips_videos" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-consent-refused">Consent Refused:</label>
+                <input type="text" id="input-consent-refused" name="consent_refused"
+                    placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-total-consent-refused">Total Consent Refused:</label>
+                <input type="text" id="input-total-consent-refused" name="total_consent_refused"
+                    placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-reason-1">Reason 1:</label>
+                <input type="text" id="input-reason-1" name="reason_1" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-reason-2">Reason 2:</label>
+                <input type="text" id="input-reason-2" name="reason_2" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-clip-forehead">Clip Forehead:</label>
+                <input type="text" id="input-clip-forehead" name="clip_forehead" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-clip-sternum">Clip Sternum:</label>
+                <input type="text" id="input-clip-sternum" name="clip_sternum" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-clip-abdomen">Clip Abdomen:</label>
+                <input type="text" id="input-clip-abdomen" name="clip_abdomen" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-clip-hips-thighs">Clip Hips/Thighs:</label>
+                <input type="text" id="input-clip-hips-thighs" name="clip_hips_thighs"
+                    placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-clip-legs">Clip Legs:</label>
+                <input type="text" id="input-clip-legs" name="clip_legs" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-clip-palm">Clip Palm:</label>
+                <input type="text" id="input-clip-palm" name="clip_palm" placeholder="Enter new content"><br>
+            </div>
+
+            <div class="form-group">
+                <label for="input-clip-soles">Clip Soles:</label>
+                <input type="text" id="input-clip-soles" name="clip_soles" placeholder="Enter new content"><br>
+            </div>
+
+            <button type="button" class="submit-button" onclick="updateFlowchart()">Check</button>
+            <button type="button" class="submit-button" id="submit-button" style="display:none;"
+                onclick="submitForm()">Submit</button>
+
+
+        </form>
+    </div>
+    <a href="/logout">Logout</a><br><br>
+    <a href="/">Home</a>
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>

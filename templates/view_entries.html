@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Flowchart Entries</title>
+    <link rel="stylesheet" href="static/css/view_entries.css">        
+</head>
+
+<body>
+    <div class="container">
+        <h2>View Flowchart Entries</h2>
+
+        <!-- Buttons to select search method -->
+        <div class="button-container">
+            <button class="search-btn" onclick="showForm('date')">Search by Date</button>
+            <button class="search-btn" onclick="showForm('month')">Search by Month</button>
+            <button class="search-btn" onclick="showForm('year')">Search by Year</button>
+        </div>
+
+        <!-- Date selection form -->
+        <form action="/view_entries" method="POST">
+            <!-- Search by Date section -->
+            <div id="form-date" class="form-section">
+                <label for="entry-date">Enter Specific Date (DD/MM/YYYY):</label>
+                <input type="text" id="entry-date" name="entry_date" placeholder="DD/MM/YYYY">
+                <button type="submit" class="search-btn">View Entries</button>
+                <span>Use DD/MM/YYYY format to search date wise entry data</span> <!-- Added text here -->
+            
+            </div>
+
+            <!-- Search by Month and Year section -->
+            <div id="form-month" class="form-section">
+                <label for="month">Select Month:</label>
+                <select id="month" name="month">
+                    <option value="">Select Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <label for="year">Enter Year:</label>
+                <input type="number" id="year" name="year" min="2000" max="2100" placeholder="YYYY">
+                <button type="submit" class="search-btn">View Entries</button>
+                <span>Select Month & Year (YYYY) eg: 2024</span> <!-- Added text here -->
+            </div>
+
+            <!-- Search by Year section -->
+            <div id="form-year" class="form-section">
+                <label for="year-only">Enter Year:</label>
+                <input type="number" id="year-only" name="year_only" min="2000" max="2100" placeholder="YYYY">
+                <button type="submit" class="search-btn">View Entries</button>
+                <span>Year (YYYY) eg: 2024</span> <!-- Added text here -->
+            </div>
+        </form>
+
+        <!-- Display the selected date, month, or year if available -->
+        {% if selected_date %}
+        <h3>Showing entries for: {{ selected_date }}</h3>
+        {% elif selected_month and selected_year %}
+        <h3>Showing entries for: {{ selected_month }}/{{ selected_year }}</h3>
+        {% elif selected_year %}
+        <h3>Showing entries for: {{ selected_year }}</h3>
+        {% endif %}
+        
+        <p>Go to <a href="/" aria-label="Home Page">Home</a> page.</p>
+
+        <!-- Entries display section -->
+        <div class="entry-container">
+            {% if entries %}
+            {% set entries_list = entries|list %} <!-- Convert cursor to list -->
+            {% if entries_list|length > 0 %}
+            {% for entry in entries_list %}
+            <div class="entry-card">
+                <h3>Entry ID: {{ entry._id }}</h3>
+                <p><span>Date:</span> {{ entry.entry_date }}</p>
+                <p><span>Total Subject Approach:</span> {{ entry.total_subject }}</p>
+                <p><span>Screening for Eligibility:</span> {{ entry.screening_eligibility }}</p>
+                <p><span>Eligible for Enrollment:</span> {{ entry.eligible_enrollment }}</p>
+                <!-- "View Full" Button -->
+                <form action="/view_full_entry/{{ entry._id }}" method="GET">
+                    <button type="submit" class="search-btn">View Full</button>
+                </form>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No entries found for the selected criteria.</p>
+            {% endif %}
+            {% else %}
+            <p>No entries found for the selected criteria.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        // Show the form section based on the button clicked
+        function showForm(type) {
+            document.getElementById('form-date').style.display = 'none';
+            document.getElementById('form-month').style.display = 'none';
+            document.getElementById('form-year').style.display = 'none';
+
+            if (type === 'date') {
+                document.getElementById('form-date').style.display = 'block';
+            } else if (type === 'month') {
+                document.getElementById('form-month').style.display = 'block';
+            } else if (type === 'year') {
+                document.getElementById('form-year').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

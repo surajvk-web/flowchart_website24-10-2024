@@ -1,0 +1,599 @@
+/* RESET STYLES & HELPER CLASSES */
+:root {
+    --level-1: #8dccad;
+    --level-2: #f5cc7f;
+    --level-3: #7b9fe0;
+    --level-4: #f27c8d;
+    --level-5: #eac15a;
+    --level-6: #b3a2e8;
+    --black: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ol {
+    list-style: none;
+}
+
+body {
+    margin: 50px 0 100px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.rectangle {
+    position: relative;
+    padding: 20px;
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); */
+}
+
+.rectangle.editing {
+    border: 1px solid #007bff;
+    /* Highlight the editing box */
+    background-color: #f0f8ff;
+    /* Light background for editing */
+}
+
+
+/* LEVEL-1 STYLES */
+.level-1 {
+    width: 50%;
+    margin: 0 auto 40px;
+    background: var(--level-1);
+}
+
+.level-1::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background: var(--black);
+}
+
+/* LEVEL-2 STYLES */
+.level-2-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.level-2::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+.level-2 {
+    width: 70%;
+    margin: 0 auto 40px;
+    background: var(--level-2);
+}
+
+/* LEVEL-3 STYLES */
+.level-3-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 150px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.level-3-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 25%;
+    width: 55%;
+    height: 2px;
+    background: var(--black);
+}
+
+.level-3-wrapper>li::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+.level-3-wrapper>li::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 80%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+.level-3::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+.level-3 {
+    margin-bottom: 20px;
+    background: var(--level-3);
+}
+
+/* LEVEL-4 STYLES */
+.level-4-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 100px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.level-4-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 35%;
+    width: 65%;
+    height: 2px;
+    background: var(--black);
+}
+
+.level-4-wrapper>li::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 35%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+.level-4-wrapper>li::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+.level-4::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+
+.level-4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: var(--level-4);
+}
+
+
+/* LEVEL-5 STYLES */
+.level-5-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two columns: one for images and one for clips/videos */
+    grid-column-gap: 150px;
+    /* Space between columns */
+    position: relative;
+}
+
+.level-5 {
+    background: var(--level-5);
+    padding: 20px;
+    /* Adjust padding as needed */
+    position: relative;
+    margin: 20px 0px;
+}
+
+.level-5-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: var(--black);
+}
+
+.level-5-wrapper>li::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+.level-5-wrapper>li::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 75%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--black);
+}
+
+/* ID SPECIFIC STYLES */
+#consent-refused {
+    background: var(--level-4);
+    /* Same as other level-4 items or customize as needed */
+    padding: 20px;
+    /* Customize padding if needed */
+}
+
+#consent-refused-1::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 55%;
+    width: 0;
+    height: 2px;
+    background: var(--black);
+}
+
+#consent-refused-1>li::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 75%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 20px;
+    background: var(--black);
+}
+
+/* LEVEL-6 STYLES */
+.level-6-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    /* Space between rows */
+    position: relative;
+}
+
+.level-6-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    /* Adjust to align with the boxes */
+    width: 2px;
+    height: calc(100%);
+    /* Full height of the wrapper plus extra for connector lines */
+    background: var(--black);
+}
+
+.level-6-wrapper>li::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 0px;
+    /* Align with the vertical line */
+    width: 30px;
+    /* Width of the horizontal connector line */
+    height: 2px;
+    background: var(--black);
+}
+
+.level-6-wrapper>li {
+    position: relative;
+    padding-left: 30px;
+    /* Space for the vertical line and connector */
+}
+
+.level-6 {
+    background: var(--level-6);
+    padding: 17px;
+    /* Adjust padding as needed */
+}
+
+
+
+
+/* Ensure no black line for "Reasons for Exclusion" */
+#exclusion-reason-title::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    /* Position the line below the "Reasons for Exclusion" title */
+    left: 0;
+    width: 0;
+    /* Remove the black line */
+    height: 0;
+    /* Remove the height */
+}
+
+/* Container for the two reason boxes */
+.reason-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Stack boxes vertically */
+    align-items: center;
+    /* Center the boxes horizontally */
+    margin-top: 20px;
+    /* Space above the boxes */
+}
+
+
+.reason {
+    background: var(--level-5);
+    /* Or another background color */
+    padding: 20px;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px 50px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 50px;
+    height: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+/* Horizontal line connecting the vertical line with Reason 1 */
+.reason-container .reason:first-child::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -39px;
+    /* Extend left from the center */
+    width: 20%;
+    /* Adjust width as needed */
+    height: 2px;
+    background: var(--black);
+    /* Line color */
+    transform: translateY(-50%);
+    /* Center vertically */
+}
+
+/* Horizontal line connecting the vertical line with Reason 2 */
+.reason-container .reason:last-child::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -39px;
+    /* Extend right from the center */
+    width: 20%;
+    /* Adjust width as needed */
+    height: 2px;
+    background: var(--black);
+    /* Line color */
+    transform: translateY(-50%);
+    /* Center vertically */
+}
+
+/* Optional: Add vertical lines on the sides if needed */
+.reason-container::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    bottom: 10px;
+    left: 0;
+    width: 2px;
+    /* Line width */
+    background: var(--black);
+    /* Line color */
+}
+
+
+
+
+
+
+
+
+
+.input-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    /* display: block; */
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #4385cc;
+    outline: none;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3e70a7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .input-container {
+        padding: 15px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-group input[type="text"] {
+        font-size: 12px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 700px) {
+    .rectangle {
+        padding: 20px 10px;
+    }
+
+    .level-1,
+    .level-2 {
+        width: 100%;
+    }
+
+    .level-1 {
+        margin-bottom: 20px;
+    }
+
+    .level-1::before,
+    .level-2-wrapper>li::before {
+        display: none;
+    }
+
+    .level-2-wrapper,
+    .level-2-wrapper::after,
+    .level-2::after {
+        display: block;
+    }
+
+    .level-2-wrapper {
+        width: 90%;
+        margin-left: 10%;
+    }
+
+    .level-2-wrapper::before {
+        left: -20px;
+        width: 2px;
+        height: calc(100% + 40px);
+    }
+
+    .level-2-wrapper>li:not(:first-child) {
+        margin-top: 50px;
+    }
+
+    .level-3-wrapper,
+    .level-4-wrapper,
+    .level-5-wrapper,
+    .level-6-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .level-3-wrapper::before,
+    .level-4-wrapper::before,
+    .level-5-wrapper::before,
+    .level-6-wrapper::before {
+        display: none;
+    }
+
+    .level-3-wrapper>li::before,
+    .level-4-wrapper>li::before,
+    .level-5-wrapper>li::before,
+    .level-6-wrapper>li::before {
+        display: none;
+    }
+}
+
+.page-footer {
+    margin-top: 50px;
+}
+
+.page-footer span {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.page-footer a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.page-footer img {
+    vertical-align: middle;
+}

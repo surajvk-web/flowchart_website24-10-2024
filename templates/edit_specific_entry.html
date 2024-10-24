@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Entry</title>
+    <link rel="stylesheet" href="static/css/edit_specific_entry.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Flowchart Content</h2><br><br>
+        
+        <form id="flowchart-form" method="POST">
+
+            <!-- Hidden input to pass the entry_id to the form -->
+            <input type="hidden" name="entry_id" value="{{ entry._id }}">
+
+            <!-- Input for 'Total Subject Approach' -->
+            <div class="form-group">
+                <label for="input-total-subject">Total Subject Approach:</label>
+                <input type="text" id="input-total-subject" name="total_subject" value="{{ entry.total_subject }}"><br>
+            </div>
+
+            <!-- Input for 'Screening for Eligibility' -->
+            <div class="form-group">
+                <label for="input-screening-eligibility">Screening for Eligibility:</label>
+                <input type="text" id="input-screening-eligibility" name="screening-eligibility" value="{{ entry.screening_eligibility }}"><br>
+            </div>
+
+            <!-- Input for 'Eligible for Enrollment' -->
+            <div class="form-group">
+                <label for="input-eligible-enrollment">Eligible for Enrollment:</label>
+                <input type="text" id="input-eligible-enrollment" name="eligible-enrollment" value="{{ entry.eligible_enrollment }}"><br>
+            </div>
+
+            <!-- Input for 'Consent and Enrolled' -->
+            <div class="form-group">
+                <label for="input-consent-enrolled">Consent and Enrolled:</label>
+                <input type="text" id="input-consent-enrolled" name="consent-enrolled" value="{{ entry.consent_enrolled }}"><br>
+            </div>
+
+            <!-- Input for 'Images' -->
+            <div class="form-group">
+                <label for="input-images">Images:</label>
+                <input type="text" id="input-images" name="images" value="{{ entry.images }}"><br>
+            </div>
+
+            <!-- Input for 'Forehead' -->
+            <div class="form-group">
+                <label for="input-forehead">Forehead:</label>
+                <input type="text" id="input-forehead" name="forehead" value="{{ entry.forehead }}"><br>
+            </div>
+
+            <!-- Input for 'Sternum' -->
+            <div class="form-group">
+                <label for="input-sternum">Sternum:</label>
+                <input type="text" id="input-sternum" name="sternum" value="{{ entry.sternum }}"><br>
+            </div>
+
+            <!-- Input for 'Abdomen' -->
+            <div class="form-group">
+                <label for="input-abdomen">Abdomen:</label>
+                <input type="text" id="input-abdomen" name="abdomen" value="{{ entry.abdomen }}"><br>
+            </div>
+
+            <!-- Input for 'Hips/Thighs' -->
+            <div class="form-group">
+                <label for="input-hips-thighs">Hips/Thighs:</label>
+                <input type="text" id="input-hips-thighs" name="hips-thighs" value="{{ entry.hips_thighs }}"><br>
+            </div>
+
+            <!-- Input for 'Legs' -->
+            <div class="form-group">
+                <label for="input-legs">Legs:</label>
+                <input type="text" id="input-legs" name="legs" value="{{ entry.legs }}"><br>
+            </div>
+
+            <!-- Input for 'Palm' -->
+            <div class="form-group">
+                <label for="input-palm">Palm:</label>
+                <input type="text" id="input-palm" name="palm" value="{{ entry.palm }}"><br>
+            </div>
+
+            <!-- Input for 'Soles' -->
+            <div class="form-group">
+                <label for="input-soles">Soles:</label>
+                <input type="text" id="input-soles" name="soles" value="{{ entry.soles }}"><br>
+            </div>
+
+            <!-- Input for 'Clips/Videos' -->
+            <div class="form-group">
+                <label for="input-clips-videos">Clips/Videos:</label>
+                <input type="text" id="input-clips-videos" name="clips-videos" value="{{ entry.clips_videos }}"><br>
+            </div>
+
+            <!-- Input for 'Consent Refused' -->
+            <div class="form-group">
+                <label for="input-consent-refused">Consent Refused:</label>
+                <input type="text" id="input-consent-refused" name="consent-refused" value="{{ entry.consent_refused }}"><br>
+            </div>
+
+            <!-- Input for 'Total Consent Refused' -->
+            <div class="form-group">
+                <label for="input-total-consent-refused">Total Consent Refused:</label>
+                <input type="text" id="input-total-consent-refused" name="total-consent-refused" value="{{ entry.total_consent_refused }}"><br>
+            </div>
+
+            <!-- Input for 'Reason 1' -->
+            <div class="form-group">
+                <label for="input-reason-1">Reason 1:</label>
+                <input type="text" id="input-reason-1" name="reason-1" value="{{ entry.reason_1 }}"><br>
+            </div>
+
+            <!-- Input for 'Reason 2' -->
+            <div class="form-group">
+                <label for="input-reason-2">Reason 2:</label>
+                <input type="text" id="input-reason-2" name="reason-2" value="{{ entry.reason_2 }}"><br>
+            </div>
+
+            <!-- Input for 'Clip Forehead' -->
+            <div class="form-group">
+                <label for="input-clip-forehead">Clip Forehead:</label>
+                <input type="text" id="input-clip-forehead" name="clip-forehead" value="{{ entry.clip_forehead }}"><br>
+            </div>
+
+            <!-- Input for 'Clip Sternum' -->
+            <div class="form-group">
+                <label for="input-clip-sternum">Clip Sternum:</label>
+                <input type="text" id="input-clip-sternum" name="clip-sternum" value="{{ entry.clip_sternum }}"><br>
+            </div>
+
+            <!-- Input for 'Clip Abdomen' -->
+            <div class="form-group">
+                <label for="input-clip-abdomen">Clip Abdomen:</label>
+                <input type="text" id="input-clip-abdomen" name="clip-abdomen" value="{{ entry.clip_abdomen }}"><br>
+            </div>
+
+            <!-- Input for 'Clip Hips/Thighs' -->
+            <div class="form-group">
+                <label for="input-clip-hips-thighs">Clip Hips/Thighs:</label>
+                <input type="text" id="input-clip-hips-thighs" name="clip-hips-thighs" value="{{ entry.clip_hips_thighs }}"><br>
+            </div>
+
+            <!-- Input for 'Clip Legs' -->
+            <div class="form-group">
+                <label for="input-clip-legs">Clip Legs:</label>
+                <input type="text" id="input-clip-legs" name="clip-legs" value="{{ entry.clip_legs }}"><br>
+            </div>
+
+            <!-- Input for 'Clip Palm' -->
+            <div class="form-group">
+                <label for="input-clip-palm">Clip Palm:</label>
+                <input type="text" id="input-clip-palm" name="clip-palm" value="{{ entry.clip_palm }}"><br>
+            </div>
+
+            <!-- Input for 'Clip Soles' -->
+            <div class="form-group">
+                <label for="input-clip-soles">Clip Soles:</label>
+                <input type="text" id="input-clip-soles" name="clip-soles" value="{{ entry.clip_soles }}"><br>
+            </div>
+
+            <!-- Submit button to save changes -->
+            <div class="form-group">
+                <input type="submit" value="Save Changes">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

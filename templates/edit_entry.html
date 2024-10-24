@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Previous Entries</title>
+    <link rel="stylesheet" href="static/css/edit_entry.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Display flash messages -->
+        <!-- {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-success">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %} -->
+
+        <h1>Edit Previous Entries</h1>
+        <a href="/">Home</a>
+
+  
+        <!-- Search by Date, Month, and Year -->
+        <div class="search-options">
+            <button onclick="toggleSearch('date')">Search by Date</button>
+            <button onclick="toggleSearch('month')">Search by Month</button>
+            <button onclick="toggleSearch('year')">Search by Year</button>
+        </div>
+
+        <!-- Search form (Date) -->
+        <div id="search-date" class="search-form" style="display:none;">
+            <form action="/edit_entry" method="POST">
+                <label for="entry-date">Enter Specific Date (DD/MM/YYYY):</label>
+                <input type="text" id="entry-date" name="entry_date" placeholder="DD/MM/YYYY">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Search form (Month) -->
+        <div id="search-month" class="search-form" style="display:none;">
+            <form action="/edit_entry" method="POST">
+                <label for="month">Month:</label>
+                <select id="month" name="month">
+                    <option value="">Select Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" min="2000" max="2100">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Search form (Year) -->
+        <div id="search-year" class="search-form" style="display:none;">
+            <form action="/edit_entry" method="POST">
+                <label for="search-year">Enter Year:</label>
+                <input type="number" id="search-year" name="search_year" min="2000" max="2100">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Search results -->
+        {% if entries %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Entry Date</th>
+                    <th>Total Subject</th>
+                    <th>Screening Eligibility</th>
+                    <th>Eligible Enrollment</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.entry_date }}</td>
+                    <td>{{ entry.total_subject }}</td>
+                    <td>{{ entry.screening_eligibility }}</td>
+                    <td>{{ entry.eligible_enrollment }}</td>
+                    <td><a href="/edit_entry/{{ entry._id }}">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No entries found for the selected criteria.</p>
+        {% endif %}
+
+    </div>
+
+    <script>
+        function toggleSearch(type) {
+            document.getElementById('search-date').style.display = 'none';
+            document.getElementById('search-month').style.display = 'none';
+            document.getElementById('search-year').style.display = 'none';
+
+            if (type === 'date') {
+                document.getElementById('search-date').style.display = 'block';
+            } else if (type === 'month') {
+                document.getElementById('search-month').style.display = 'block';
+            } else if (type === 'year') {
+                document.getElementById('search-year').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
