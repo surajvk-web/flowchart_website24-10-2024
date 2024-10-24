@@ -34,7 +34,6 @@ def register():
         users_collection.insert_one({'username': username, 'password': password})
         flash('Registration successful! Please log in.')
         return redirect(url_for('login'))
-
     return render_template('register.html')
 
 # Login Route
@@ -62,7 +61,6 @@ def new_entry():
         return redirect(url_for('login'))
 
     return render_template('new_entry.html')
-
 
 @app.route('/save_entry', methods=['POST'])
 def save_entry():
@@ -120,7 +118,6 @@ def save_entry():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
-
 @app.route('/edit_entry', methods=['GET', 'POST'])
 def edit_entry():
     query = {}
@@ -177,8 +174,6 @@ def edit_entry():
     # Render the template with search results
     return render_template('edit_entry.html', entries=entries)
 
-
-
 @app.route('/edit_entry/<entry_id>', methods=['GET', 'POST'])
 def edit_specific_entry(entry_id):
     # Find the entry by ID
@@ -226,7 +221,6 @@ def edit_specific_entry(entry_id):
 
     return render_template('edit_specific_entry.html', entry=entry)
 
-
 @app.route('/view_entries', methods=['GET', 'POST'])
 def view_entries():
     if request.method == 'POST':
@@ -268,20 +262,10 @@ def view_entries():
                         "$lte": end_date_str
                     }
                 }
-
                 selected_month = month
                 selected_year = year
             except ValueError:
                 return "Invalid month or year.", 400
-
-
-
-
-
-
-
-
-
 
         # Year-wise search using the entire year range
         elif year:
@@ -300,7 +284,6 @@ def view_entries():
                         "$lte": end_date_str
                     }
                 }
-
                 selected_year = year
             except ValueError:
                 return "Invalid year format. Please use YYYY.", 400
@@ -329,14 +312,12 @@ def view_full_entry(entry_id):
         flash('Entry not found.')
         return redirect('/view_entries')
 
-
 # Logout Route
 @app.route('/logout')
 def logout():
     session.pop('username', None)
     flash('You have been logged out.')
     return redirect(url_for('login'))
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
